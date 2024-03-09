@@ -32,7 +32,7 @@ if my_df_cat :
    if pb_options1:
        item_list = ' '
        for item_chosen in pb_options1:
-           item_list += item_chosen + ' '
+           item_list += item_chosen + ','
        st.write(item_list)
        my_insert_stmt = """insert into pind_bhatura.public.pind_bhatura_orders(name_on_order,ingredients) values ('"""+name_on_order+"""','"""+item_list+"""')"""
        time_to_insert1 = st.button('Submit Order')
