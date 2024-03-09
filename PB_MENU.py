@@ -4,7 +4,8 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 import requests
 
-session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
 
 # Write directly to the app
 st.title(":balloon: Pind Bhatura Menu :balloon:")
