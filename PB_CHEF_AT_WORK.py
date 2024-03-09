@@ -14,6 +14,9 @@ st.write(
 # Get the current credentials
 #session = get_active_session()
 
+cnx = st.connection("snowflake")
+session = cnx.session()
+
 my_dataframe = session.table("pind_bhatura.public.pind_bhatura_orders").filter(col("order_filled")==0).collect()
 editable_df = st.experimental_data_editor(my_dataframe)
 #st.dataframe(data=editable_df, use_container_width=True)
